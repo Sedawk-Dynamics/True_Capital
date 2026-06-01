@@ -24,3 +24,7 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# local logs
+dev-server.log
+*.log
