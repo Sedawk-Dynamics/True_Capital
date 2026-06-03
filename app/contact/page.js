@@ -6,7 +6,7 @@ import { COMPANY } from "@/lib/data";
 export const metadata = {
   title: "Contact Us",
   description:
-    "Contact True Capital & Advisory Pvt Ltd — visit our Haridwar office, call +91 90276 38434, WhatsApp us, or send an online enquiry. Mon–Sat, 9 AM – 6 PM.",
+    "Contact True Capital & Advisory Pvt Ltd — visit our Haridwar office, call or WhatsApp +91 97581 89999, or send an online enquiry. Mon–Sat, 9 AM – 6 PM.",
 };
 
 export default function ContactPage() {
@@ -26,15 +26,15 @@ export default function ContactPage() {
         <div className="contact-info reveal">
           <div className="ci-item">
             <div className="icon-chip"><Icon name="pin" strokeWidth={2} /></div>
-            <div><b>Corporate Office</b><p>{COMPANY.address}</p></div>
+            <div><b>Head Office</b><p>{COMPANY.address}</p></div>
           </div>
           <div className="ci-item">
             <div className="icon-chip"><Icon name="phone" strokeWidth={2} /></div>
-            <div><b>Phone</b><p><a href={`tel:${COMPANY.phoneIntl}`}>+91 90276 38434</a></p></div>
+            <div><b>Phone</b><p><a href={`tel:${COMPANY.phoneIntl}`}>{COMPANY.phoneDisplay}</a></p></div>
           </div>
           <div className="ci-item">
             <div className="icon-chip"><Icon name="whatsapp" strokeWidth={2} /></div>
-            <div><b>WhatsApp</b><p><a href={`https://wa.me/${COMPANY.whatsappIntl}`} target="_blank" rel="noopener noreferrer">+91 97581 89999</a></p></div>
+            <div><b>WhatsApp</b><p><a href={`https://wa.me/${COMPANY.whatsappIntl}`} target="_blank" rel="noopener noreferrer">{COMPANY.phoneDisplay}</a></p></div>
           </div>
           <div className="ci-item">
             <div className="icon-chip"><Icon name="mail" strokeWidth={2} /></div>

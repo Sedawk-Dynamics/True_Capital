@@ -9,9 +9,9 @@ import { COMPANY } from "@/lib/data";
 const LINKS = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/services", label: "Services" },
+  { href: "/services", label: "Loans" },
   { href: "/calculator", label: "EMI Calculator" },
-  { href: "/apply", label: "Apply" },
+  { href: "/apply", label: "Apply Loan" },
   { href: "/reviews", label: "Reviews" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },

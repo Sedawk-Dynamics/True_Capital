@@ -40,17 +40,22 @@ export default function Footer() {
                 </svg>
               </a>
             </div>
+            <a href={COMPANY.googleReviewUrl} target="_blank" rel="noopener noreferrer" className="btn btn-ghost btn-sm" style={{ marginTop: 18 }}>
+              <span style={{ color: "#ffc24b", fontSize: 16 }}>★</span> Rate us on Google
+            </a>
           </div>
 
           <div>
             <h5>Quick Links</h5>
             <Link href="/">Home</Link>
             <Link href="/about">About Us</Link>
-            <Link href="/services">Services</Link>
+            <Link href="/services">Loans</Link>
             <Link href="/calculator">EMI Calculator</Link>
-            <Link href="/apply">Apply Online</Link>
+            <Link href="/cibil">Check CIBIL Score</Link>
+            <Link href="/apply">Apply for Loan</Link>
             <Link href="/blog">Blog</Link>
             <Link href="/contact">Contact</Link>
+            <Link href="/privacy">Privacy Policy</Link>
           </div>
 
           <div>
@@ -67,8 +72,8 @@ export default function Footer() {
           <div className="foot-contact">
             <h5>Contact</h5>
             <div className="fc"><Icon name="pin" strokeWidth={2} /><span>{COMPANY.address}</span></div>
-            <div className="fc"><Icon name="phone" strokeWidth={2} /><a href={`tel:${COMPANY.phoneIntl}`}>+91 90276 38434</a></div>
-            <div className="fc"><Icon name="whatsapp" strokeWidth={2} /><a href={`https://wa.me/${COMPANY.whatsappIntl}`} target="_blank" rel="noopener noreferrer">+91 97581 89999</a></div>
+            <div className="fc"><Icon name="phone" strokeWidth={2} /><a href={`tel:${COMPANY.phoneIntl}`}>{COMPANY.phoneDisplay}</a></div>
+            <div className="fc"><Icon name="whatsapp" strokeWidth={2} /><a href={`https://wa.me/${COMPANY.whatsappIntl}`} target="_blank" rel="noopener noreferrer">{COMPANY.phoneDisplay}</a></div>
             <div className="fc"><Icon name="mail" strokeWidth={2} /><a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a></div>
             <div className="fc"><Icon name="clock" strokeWidth={2} /><span>Mon–Sat: 9 AM – 6 PM • Sun: Closed</span></div>
           </div>

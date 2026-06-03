@@ -67,8 +67,12 @@ export default function LeadForm({
       }
       return;
     }
+    const fullName =
+      values.name ||
+      [values.firstName, values.lastName].filter(Boolean).join(" ").trim() ||
+      "—";
     addLead({
-      name: values.name || "—",
+      name: fullName,
       mobile: values.mobile || "—",
       source,
       loanType: values.loanType || "General Enquiry",
