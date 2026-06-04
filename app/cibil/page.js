@@ -19,7 +19,7 @@ export default function CibilPage() {
     <div className="section container">
       <SectionHead
         eyebrow="Credit health"
-        title={<>Check your <span className="grad">CIBIL Score</span></>}
+        title={<>Check Your <span className="grad">CIBIL Score</span></>}
         sub="Your credit score decides whether you get a loan — and at what rate. Check it for free and get expert guidance."
       />
 

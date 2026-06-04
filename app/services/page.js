@@ -13,7 +13,7 @@ export default function ServicesPage() {
     <div className="section container">
       <SectionHead
         eyebrow="Our services"
-        title={<>Complete <span className="grad">financial solutions</span></>}
+        title={<>Complete <span className="grad">Financial Solutions</span></>}
         sub="A full suite of lending, advisory, insurance and investment services — built around your goals."
       />
 

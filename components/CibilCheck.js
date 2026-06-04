@@ -59,7 +59,7 @@ export default function CibilCheck() {
   }
 
   return (
-    <form className="lead-form" noValidate onSubmit={submit}>
+    <form noValidate onSubmit={submit}>
       <div className="form-grid">
         <div className={`field full${errors.name ? " invalid" : ""}`}>
           <label>Full Name <span className="req">*</span></label>

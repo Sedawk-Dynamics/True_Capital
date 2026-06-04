@@ -97,7 +97,7 @@ export default function LeadForm({
   }
 
   return (
-    <form className="lead-form" noValidate onSubmit={onSubmit}>
+    <form noValidate onSubmit={onSubmit}>
       <div className="form-grid">
         {fields.map((f) => {
           const options = f.loans ? ALL_LOANS : f.options;

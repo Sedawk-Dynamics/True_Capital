@@ -7,7 +7,7 @@ import { TESTIMONIALS, starStr, initials } from "@/lib/data";
 function ReviewCard({ r, rating }) {
   return (
     <div className="card reveal">
-      <div style={{ color: "#ffc24b", letterSpacing: 2, fontSize: 17, marginBottom: 12 }}>
+      <div style={{ color: "var(--star)", letterSpacing: 2, fontSize: 17, marginBottom: 12 }}>
         {starStr(rating || 5)}
       </div>
       <p style={{ color: "var(--muted)", fontSize: 14.5, marginBottom: 18 }}>&ldquo;{r.q}&rdquo;</p>
@@ -34,7 +34,7 @@ export default function Reviews() {
     e.preventDefault();
     const errs = {
       rname: !validate("name", values.rname),
-      rtext: !validate("name", values.rtext),
+      rtext: (values.rtext || "").trim().length < 10,
     };
     setErrors(errs);
     if (errs.rname || errs.rtext) return;
@@ -89,7 +89,7 @@ export default function Reviews() {
                 onMouseLeave={() => setHover(0)}>
                 {[1, 2, 3, 4, 5].map((v) => (
                   <span key={v} data-v={v}
-                    style={{ color: v <= stars ? "#ffc24b" : "#3a3d55" }}
+                    style={{ color: v <= stars ? "var(--star)" : "var(--star-empty)" }}
                     onMouseEnter={() => setHover(v)}
                     onClick={() => setRating(v)}>
                     ★

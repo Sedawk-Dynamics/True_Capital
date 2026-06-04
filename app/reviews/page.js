@@ -13,12 +13,12 @@ export default function ReviewsPage() {
     <div className="section container">
       <SectionHead
         eyebrow="Customer reviews"
-        title={<>Rated &amp; <span className="grad">trusted</span> by clients</>}
+        title={<>Rated &amp; <span className="grad">Trusted</span> by Clients</>}
         sub="Real feedback from individuals and businesses we've helped across Uttarakhand and beyond."
       />
       <div className="center reveal" style={{ marginBottom: 40 }}>
         <a href={COMPANY.googleReviewUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-          <span style={{ color: "#ffc24b", fontSize: 18 }}>★</span> Rate us on Google
+          <span style={{ color: "var(--star)", fontSize: 18 }}>★</span> Rate us on Google
         </a>
       </div>
       <Reviews />

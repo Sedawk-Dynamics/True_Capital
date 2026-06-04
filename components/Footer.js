@@ -1,7 +1,7 @@
 import Link from "next/link";
-import Logo from "./Logo";
+import Brand from "./Brand";
 import Icon from "./Icon";
-import { COMPANY } from "@/lib/data";
+import { COMPANY, DSA_TYPES } from "@/lib/data";
 
 const SOCIALS = [
   { label: "Facebook", path: "M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.8-1.6 1.5V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12Z" },
@@ -17,12 +17,7 @@ export default function Footer() {
       <div className="container">
         <div className="footer-grid">
           <div className="foot-brand">
-            <Link href="/" className="brand">
-              <Logo id="foot-lg" />
-              <span>
-                TRUE CAPITAL<small>&amp; Advisory</small>
-              </span>
-            </Link>
+            <Brand logoId="foot-lg" />
             <p>Fast Loan. Trusted Solution. — Reliable lending, investment, insurance &amp; advisory services across India.</p>
             <div className="socials">
               {SOCIALS.map((s) => (
@@ -41,7 +36,7 @@ export default function Footer() {
               </a>
             </div>
             <a href={COMPANY.googleReviewUrl} target="_blank" rel="noopener noreferrer" className="btn btn-ghost btn-sm" style={{ marginTop: 18 }}>
-              <span style={{ color: "#ffc24b", fontSize: 16 }}>★</span> Rate us on Google
+              <span style={{ color: "var(--star)", fontSize: 16 }}>★</span> Rate us on Google
             </a>
           </div>
 
@@ -65,8 +60,15 @@ export default function Footer() {
             <Link href="/services">Business &amp; MSME Loan</Link>
             <Link href="/services">Loan Against Property</Link>
             <Link href="/services">Private Funding</Link>
-            <Link href="/services">DSA Services</Link>
             <Link href="/services">Wealth Advisory</Link>
+            <Link href="/calculator">EMI Calculator</Link>
+          </div>
+
+          <div>
+            <h5>DSA Partner</h5>
+            {DSA_TYPES.map((d) => (
+              <Link key={d.slug} href={`/dsa/${d.slug}`}>{d.t}</Link>
+            ))}
           </div>
 
           <div className="foot-contact">

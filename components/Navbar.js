@@ -2,16 +2,16 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Logo from "./Logo";
+import Brand from "./Brand";
 import Icon from "./Icon";
-import { COMPANY } from "@/lib/data";
+import { COMPANY, DSA_TYPES } from "@/lib/data";
 
 const LINKS = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/services", label: "Loans" },
-  { href: "/calculator", label: "EMI Calculator" },
-  { href: "/apply", label: "Apply Loan" },
+  { href: "/dsa", label: "DSA", children: DSA_TYPES.map((d) => ({ href: `/dsa/${d.slug}`, label: d.t })) },
+  { href: "/apply", label: "Apply for Loan" },
   { href: "/reviews", label: "Reviews" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
@@ -34,26 +34,43 @@ export default function Navbar() {
     setOpen(false);
   }, [pathname]);
 
+  // hide the floating widgets while the mobile menu is open (avoids overlap)
+  useEffect(() => {
+    document.body.classList.toggle("menu-open", open);
+    return () => document.body.classList.remove("menu-open");
+  }, [open]);
+
   const isActive = (href) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
 
   return (
     <nav className={`nav${scrolled ? " scrolled" : ""}`}>
       <div className="container nav-inner">
-        <Link href="/" className="brand">
-          <Logo id="nav-lg" />
-          <span>
-            TRUE CAPITAL<small>&amp; Advisory</small>
-          </span>
-        </Link>
+        <Brand logoId="nav-lg" />
 
         <ul className={`nav-links${open ? " open" : ""}`}>
-          {LINKS.map((l) => (
-            <li key={l.href}>
-              <Link href={l.href} className={isActive(l.href) ? "active" : ""}>
-                {l.label}
-              </Link>
-            </li>
-          ))}
+          {LINKS.map((l) =>
+            l.children ? (
+              <li key={l.href} className="has-dropdown">
+                <Link href={l.href} className={isActive(l.href) ? "active" : ""}>
+                  {l.label}
+                  <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                </Link>
+                <ul className="dropdown">
+                  {l.children.map((c) => (
+                    <li key={c.href}>
+                      <Link href={c.href}>{c.label}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ) : (
+              <li key={l.href}>
+                <Link href={l.href} className={isActive(l.href) ? "active" : ""}>
+                  {l.label}
+                </Link>
+              </li>
+            )
+          )}
         </ul>
 
         <div className="nav-cta">

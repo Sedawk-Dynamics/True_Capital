@@ -13,12 +13,25 @@ export default function AboutPage() {
   return (
     <div className="section container">
       <SectionHead
-        eyebrow="About us"
-        title={<>A professionally managed <span className="grad">financial partner</span></>}
-        sub="True Capital & Advisory Pvt Ltd is a professionally managed financial services and advisory company dedicated to delivering reliable, transparent, and growth-oriented financial solutions across India. We provide comprehensive lending, investment, insurance, and advisory services tailored to individuals, startups, MSMEs, and enterprises."
+        eyebrow="About Us"
+        title={<>A Professionally Managed <span className="grad">Financial Partner</span></>}
+        sub="True Capital & Advisory Pvt Ltd is a professionally managed financial services and advisory firm committed to delivering reliable, transparent, and growth-oriented solutions across India. We offer end-to-end lending, investment, insurance, and advisory services — thoughtfully tailored to individuals, startups, MSMEs, and enterprises."
       />
 
+      {/* Credibility strip */}
+      <div className="center reveal" style={{ marginTop: -18, marginBottom: 56 }}>
+        <div className="trust-strip" style={{ marginTop: 0, justifyContent: "center" }}>
+          <span><Icon name="check" strokeWidth={2} /> Pan-India Reach</span>
+          <span><Icon name="check" strokeWidth={2} /> 40+ Lending Partners</span>
+          <span><Icon name="check" strokeWidth={2} /> Transparent &amp; Compliant Process</span>
+        </div>
+      </div>
+
       {/* Mission / Vision */}
+      <div className="center" style={{ marginBottom: 30 }}>
+        <span className="eyebrow reveal"><span className="dot" /> Our Purpose</span>
+        <h2 className="section-title reveal" style={{ fontSize: "clamp(24px,3.2vw,34px)" }}>Our Mission &amp; <span className="grad">Vision</span></h2>
+      </div>
       <div className="about-grid" style={{ marginBottom: 40 }}>
         <div className="card mv-card reveal">
           <div className="icon-chip"><Icon name="target" strokeWidth={2} /></div>
@@ -39,6 +52,10 @@ export default function AboutPage() {
       </div>
 
       {/* Founder's message */}
+      <div className="center" style={{ marginBottom: 30 }}>
+        <span className="eyebrow reveal"><span className="dot" /> Founder&apos;s Message</span>
+        <h2 className="section-title reveal" style={{ fontSize: "clamp(24px,3.2vw,34px)" }}>A Note From Our <span className="grad">Founder</span></h2>
+      </div>
       <div className="card reveal" style={{ marginBottom: 50, background: "var(--grad-soft)", borderColor: "rgba(79,139,255,0.25)" }}>
         <div className="founder">
           <div className="quote-mark">&ldquo;</div>
@@ -61,7 +78,8 @@ export default function AboutPage() {
 
       {/* Why choose us */}
       <div className="center" style={{ marginBottom: 36 }}>
-        <h2 className="section-title reveal" style={{ fontSize: "clamp(24px,3.2vw,34px)" }}>Why clients <span className="grad">choose us</span></h2>
+        <span className="eyebrow reveal"><span className="dot" /> Why True Capital</span>
+        <h2 className="section-title reveal" style={{ fontSize: "clamp(24px,3.2vw,34px)" }}>Why Clients <span className="grad">Choose Us</span></h2>
       </div>
       <div className="grid g-3" style={{ marginBottom: 60 }}>
         {WHY.slice(0, 3).map((f) => (
@@ -70,7 +88,7 @@ export default function AboutPage() {
       </div>
 
       {/* Leadership */}
-      <SectionHead eyebrow="Leadership" title={<>Directors &amp; <span className="grad">leadership team</span></>} />
+      <SectionHead eyebrow="Leadership" title={<>Directors &amp; <span className="grad">Leadership Team</span></>} />
       <div className="grid g-3" style={{ marginBottom: 54 }}>
         {TEAM.map((m) => (
           <div className="card team-card reveal" key={m.n}>

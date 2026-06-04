@@ -16,7 +16,7 @@ const clampNum = (v, min, max, def) => {
   return Math.min(Math.max(v, min), max);
 };
 
-export default function EmiCalculator() {
+export default function EmiCalculator({ embedded = false, onApplyClick }) {
   const [amount, setAmount] = useState(2500000);
   const [rate, setRate] = useState(8.5);
   const [tenMode, setTenMode] = useState("years");
@@ -25,7 +25,7 @@ export default function EmiCalculator() {
   const canvasRef = useRef(null);
 
   // computed values
-  const P = clampNum(Number(amount), 10000, 50000000, 2500000);
+  const P = clampNum(Number(amount), 50000, 50000000, 2500000);
   const annual = clampNum(Number(rate), 0.1, 35, 8.5);
   const months =
     tenMode === "years"
@@ -93,7 +93,7 @@ export default function EmiCalculator() {
   const tenRange = tenMode === "years" ? { min: 1, max: 30, step: 1 } : { min: 6, max: 360, step: 6 };
 
   return (
-    <div className="card reveal" style={{ padding: "clamp(22px,4vw,40px)" }}>
+    <div className={embedded ? "" : "card reveal"} style={embedded ? undefined : { padding: "clamp(22px,4vw,40px)" }}>
       <div style={{ marginBottom: 26 }}>
         <label style={{ fontSize: 13.5, fontWeight: 600, color: "#d7d9e6", display: "block", marginBottom: 10 }}>
           Select loan type
@@ -155,7 +155,7 @@ export default function EmiCalculator() {
               value={tenure} onChange={(e) => setTenure(e.target.value)} />
           </div>
 
-          <Link href="/apply" className="btn btn-primary btn-block" style={{ marginTop: 8 }}>
+          <Link href="/apply" className="btn btn-primary btn-block" style={{ marginTop: 8 }} onClick={onApplyClick}>
             Apply for this loan <Icon name="arrow" strokeWidth={2} />
           </Link>
         </div>

@@ -12,7 +12,7 @@ export default function BlogPage() {
     <div className="section container">
       <SectionHead
         eyebrow="Insights"
-        title={<>Loan guides, finance &amp; <span className="grad">credit tips</span></>}
+        title={<>Loan Guides, Finance &amp; <span className="grad">Credit Tips</span></>}
         sub="Practical, India-relevant advice to help you borrow smarter and build a healthy credit profile."
       />
       <BlogList />

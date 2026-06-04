@@ -29,7 +29,7 @@ app/
   about/             # About Us
   services/          # Services
   calculator/        # EMI Calculator
-  apply/             # Apply Online (form + eligibility + upload)
+  apply/             # Apply Online (multi-section loan application form + document upload)
   reviews/           # Customer Reviews
   blog/              # Blog (with article modals)
   contact/           # Contact (map + enquiry form)
@@ -43,7 +43,7 @@ lib/
 ## Features
 
 - Fully responsive, dark fintech design with scroll-reveal animations & animated counters
-- Working **EMI calculator** (canvas donut chart) and **FOIR-based eligibility checker**
+- Working **EMI calculator** (canvas donut chart) in a popup, plus a **CIBIL score check** form
 - Validated lead / application / contact / review forms with success states
 - Client-side **document upload** (drag-drop, type/size validation)
 - Floating WhatsApp + Click-to-Call buttons site-wide

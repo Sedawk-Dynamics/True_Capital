@@ -4,6 +4,7 @@ import { LeadProvider } from "@/lib/LeadContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
+import EmiSideTab from "@/components/EmiSideTab";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const sora = Sora({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"], variable: "--font-sora", display: "swap" });
@@ -56,6 +57,7 @@ export default function RootLayout({ children }) {
           <ScrollReveal />
           <main className="page-enter">{children}</main>
           <Footer />
+          <EmiSideTab />
           <FloatingButtons />
         </LeadProvider>
       </body>

@@ -80,7 +80,7 @@ export default function HomePage() {
 
       {/* WHY CHOOSE US */}
       <div className="section section-sm container">
-        <SectionHead eyebrow="Why True Capital" title={<>Built on <span className="grad">trust</span> &amp; transparency</>} />
+        <SectionHead eyebrow="Why True Capital" title={<>Built on <span className="grad">Trust</span> &amp; Transparency</>} />
         <div className="grid g-3">
           {WHY.map((f) => (
             <FeatureCard key={f.t} feature={f} />
@@ -104,7 +104,7 @@ export default function HomePage() {
 
       {/* TESTIMONIALS */}
       <div className="section container">
-        <SectionHead eyebrow="Client stories" title={<>What our <span className="grad">customers</span> say</>} />
+        <SectionHead eyebrow="Client stories" title={<>What Our <span className="grad">Customers</span> Say</>} />
         <Testimonials />
       </div>
 
@@ -114,7 +114,7 @@ export default function HomePage() {
           <div className="grid g-2" style={{ alignItems: "center", gap: 32 }}>
             <div>
               <span className="eyebrow"><span className="dot" /> Free consultation</span>
-              <h2 className="section-title" style={{ fontSize: "clamp(26px,3.6vw,38px)" }}>Get a quick <span className="grad">callback</span></h2>
+              <h2 className="section-title" style={{ fontSize: "clamp(26px,3.6vw,38px)" }}>Get a Quick <span className="grad">Callback</span></h2>
               <p className="section-sub">
                 Share a few details and our advisors will reach out with the best loan options for you — no obligation,
                 completely free.
@@ -122,7 +122,7 @@ export default function HomePage() {
               <ul style={{ marginTop: 20, display: "flex", flexDirection: "column", gap: 12 }}>
                 {["Personalised loan matching", "Lowest available interest rates", "End-to-end documentation support"].map((x) => (
                   <li key={x} style={{ display: "flex", gap: 10, color: "var(--muted)" }}>
-                    <Icon name="check" strokeWidth={2} width={20} height={20} style={{ color: "#4F8BFF", flex: "none" }} /> {x}
+                    <Icon name="check" strokeWidth={2} width={20} height={20} style={{ color: "var(--blue-2)", flex: "none" }} /> {x}
                   </li>
                 ))}
               </ul>

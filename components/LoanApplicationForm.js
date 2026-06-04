@@ -3,7 +3,7 @@ import { useState } from "react";
 import Icon from "./Icon";
 import DocumentUpload from "./DocumentUpload";
 import { useLeads } from "@/lib/LeadContext";
-import { ALL_LOANS, fmtINR } from "@/lib/data";
+import { ALL_LOANS, fmtINR, COMPANY } from "@/lib/data";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PAN_RE = /^[A-Z]{5}[0-9]{4}[A-Z]$/;
@@ -149,7 +149,7 @@ export default function LoanApplicationForm({ initialLoan = "" }) {
         <div className="check"><Icon name="check" strokeWidth={2.5} /></div>
         <h3>Application submitted</h3>
         <p>Thank you! Your loan application has been received. Our team will verify your details and contact you shortly with the next steps.</p>
-        <a href="https://wa.me/919758189999" target="_blank" rel="noopener noreferrer" className="btn btn-ghost btn-sm" style={{ marginTop: 16 }}>
+        <a href={`https://wa.me/${COMPANY.whatsappIntl}`} target="_blank" rel="noopener noreferrer" className="btn btn-ghost btn-sm" style={{ marginTop: 16 }}>
           Chat on WhatsApp
         </a>
       </div>
@@ -157,7 +157,7 @@ export default function LoanApplicationForm({ initialLoan = "" }) {
   }
 
   return (
-    <form className="lead-form" noValidate onSubmit={onSubmit}>
+    <form noValidate onSubmit={onSubmit}>
       {SECTIONS.map((section, si) => (
         <div key={section.title} className="card reveal" style={{ marginBottom: 22 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 18 }}>
