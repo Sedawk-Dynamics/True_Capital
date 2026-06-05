@@ -12,7 +12,7 @@ const LINKS = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Loans" },
   { href: "/dsa", label: "DSA", children: DSA_TYPES.map((d) => ({ href: `/dsa/${d.slug}`, label: d.t })) },
-  { href: "/apply", label: "Become Our Partner" },
+  { href: "/apply", label: "Become Our Partner", cta: true },
   { href: "/reviews", label: "Reviews" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
@@ -66,7 +66,10 @@ export default function Navbar() {
               </li>
             ) : (
               <li key={l.href}>
-                <Link href={l.href} className={isActive(l.href) ? "active" : ""}>
+                <Link
+                  href={l.href}
+                  className={`${isActive(l.href) ? "active " : ""}${l.cta ? "nav-partner" : ""}`.trim()}
+                >
                   {l.label}
                 </Link>
               </li>
