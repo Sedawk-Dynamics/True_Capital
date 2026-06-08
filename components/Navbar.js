@@ -12,7 +12,7 @@ const LINKS = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Loans" },
   { href: "/dsa", label: "DSA", children: DSA_TYPES.map((d) => ({ href: `/dsa/${d.slug}`, label: d.t })) },
-  { href: "/apply", label: "Become Our Partner", cta: true },
+  { href: "/apply", label: "Partner", cta: true },
   { href: "/reviews", label: "Reviews" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
