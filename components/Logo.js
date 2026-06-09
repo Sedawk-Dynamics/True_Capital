@@ -1,40 +1,27 @@
-"use client";
-import { useState } from "react";
-
-// Uses /public/logo.png if present; otherwise falls back to the built-in SVG mark
-// so the header/footer never break. Drop a transparent, cropped logo at
-// public/logo.png and it is picked up automatically.
+// True Capital brand mark — faithful SVG of the company logo (T monogram +
+// ascending growth bars + rising arrow + orbit swoosh). The "navy" parts use
+// --logo-navy so the mark stays visible on both light and dark themes; the blue
+// accents use the brand blue.
 export default function Logo({ id = "lg", className = "logo" }) {
-  const [imgOk, setImgOk] = useState(true);
-
-  if (imgOk) {
-    return (
-      // eslint-disable-next-line @next/next/no-img-element
-      <img
-        src="/logo.png"
-        alt="True Capital & Advisory"
-        className={className}
-        onError={() => setImgOk(false)}
-        style={{ height: 40, width: "auto", objectFit: "contain" }}
-      />
-    );
-  }
-
-  const g = `tc-${id}`;
+  const navy = "var(--logo-navy)";
+  const blue = "#2E7BFF";
   return (
-    <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="True Capital logo">
-      <defs>
-        <linearGradient id={g} x1="0" y1="0" x2="64" y2="64">
-          <stop stopColor="#1E5BFF" />
-          <stop offset="1" stopColor="#4F8BFF" />
-        </linearGradient>
-      </defs>
-      <rect x="13" y="13" width="27" height="7.5" rx="2" fill={`url(#${g})`} />
-      <rect x="22.75" y="13" width="7.5" height="32" rx="2" fill={`url(#${g})`} />
-      <rect x="35" y="29" width="6" height="16" rx="1.5" fill="#1E5BFF" opacity="0.85" />
-      <path d="M30 42 L40 32 L46 36 L53 20" stroke="#4F8BFF" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M45.5 18.5 L54.5 17 L53 26" stroke="#4F8BFF" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M10 46 C 18 58 46 58 54 43" stroke="#4F8BFF" strokeWidth="3.8" strokeLinecap="round" fill="none" />
+    <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="True Capital & Advisory logo">
+      {/* orbit swoosh */}
+      <path d="M11 39 C 10 52 22 58 33 56 C 45 54 55 46 56 35" fill="none" stroke={blue} strokeWidth="3.6" strokeLinecap="round" />
+
+      {/* ascending growth bars */}
+      <rect x="29.5" y="31" width="5.4" height="15" rx="1.2" fill={navy} />
+      <rect x="36.4" y="26" width="5.4" height="20" rx="1.2" fill={blue} />
+      <rect x="43.3" y="21" width="5.4" height="25" rx="1.2" fill={navy} />
+
+      {/* T monogram */}
+      <path d="M13.5 13 H40.5 L37.8 20 H11.8 Z" fill={navy} />
+      <rect x="21" y="13" width="7.2" height="33" rx="1.5" fill={navy} />
+
+      {/* rising arrow */}
+      <path d="M30 43 L52.5 16" stroke={blue} strokeWidth="4.6" strokeLinecap="round" />
+      <path d="M44 14.4 L54.6 13 L53 23.4" fill="none" stroke={blue} strokeWidth="4.6" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }

@@ -36,6 +36,7 @@
   --nav-bg-solid:rgba(10,10,15,0.97);
   --dropdown-bg:rgba(13,14,22,0.98);
   --label:#d7d9e6;
+  --logo-navy:#E6EDFF;
   color-scheme:dark;
   --maxw:1200px;
   --space:clamp(16px,4vw,28px);
@@ -65,6 +66,7 @@
   --nav-bg-solid:rgba(255,255,255,0.97);
   --dropdown-bg:#FFFFFF;
   --label:#2A3344;
+  --logo-navy:#0B1F44;
   --grad-soft:linear-gradient(135deg,rgba(30,91,255,0.10),rgba(79,139,255,0.04));
   --shadow:0 10px 40px rgba(20,30,60,0.10);
   --shadow-blue:0 12px 44px rgba(30,91,255,0.18);
